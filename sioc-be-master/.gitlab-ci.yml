@@ -1,0 +1,26 @@
+image: node:8.10.0-alpine
+cache:
+  key: "alpine"
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install
+
+test:
+  script:
+    - npm test
+  tags:
+    - docker
+
+build:
+  stage: build
+  artifacts:
+    paths:
+      - dist/
+  script:
+    - npm run build
+  only:
+    - master
+  tags:
+    - docker

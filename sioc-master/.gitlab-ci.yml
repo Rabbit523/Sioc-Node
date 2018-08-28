@@ -1,0 +1,20 @@
+image: node:8-alpine
+cache:
+  key: "8-alpine"
+  paths:
+    - node_modules/
+
+before_script:
+  - npm install
+
+build:
+  stage: build
+  artifacts:
+    paths:
+      - dist/
+  script:
+    - npm run build
+  only:
+    - master
+  tags:
+    - docker

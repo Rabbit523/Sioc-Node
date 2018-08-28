@@ -1,0 +1,10 @@
+{
+  "mode": "development",
+  "endpoint": "http://localhost:6720/",
+  "authEndpoint" : "https://sioc-be-test.herokuapp.com/",
+  "server": {
+    "port": 3000,
+    "static": "public",
+    "morgan": "dev"
+  }
+}
